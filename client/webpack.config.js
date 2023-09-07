@@ -11,7 +11,10 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      header: './src/js/header.js',
+      editor: './src/js/editor.js',
+      database: './src/js/database.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -21,7 +24,7 @@ module.exports = () => {
       // Webpack plugin that generates our html file and injects our bundles. 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Contact Cards'
+        title: 'JATE'
       }),
      
       // Injects our custom service worker
@@ -34,9 +37,9 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Contact Cards',
-        short_name: 'Contact',
-        description: 'Never forget your contacts!',
+        name: 'Just another text editor',
+        short_name: 'JATE',
+        description: 'Add Text!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
